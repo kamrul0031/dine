@@ -2,6 +2,84 @@ import Alertbox from "./Alertbox"
 import Grap1 from "./Grap1"
 
 function Sidebar() {
+   const optionsValues = Array(3).fill().map(() => (
+      {
+      chart: {
+        height: "40%",
+        maxWidth: "100%",
+        type: "area",
+        fontFamily: "Inter, sans-serif",
+        dropShadow: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      tooltip: {
+        enabled: true,
+        x: {
+          show: false,
+        },
+      },
+      fill: {
+        type: "solid",
+        gradient: {
+          opacityFrom: 0.55,
+          opacityTo: 0,
+          shade: "#1C64F2",
+          gradientToColors: ["#1C64F2"],
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: 6,
+      },
+      grid: {
+        show: false,
+        strokeDashArray: 4,
+        padding: {
+          left: 2,
+          right: 2,
+          top: 0,
+        },
+      },
+      series: [
+        {
+          name: "New users",
+          data: [6500, 6418, 6456, 6526, 6356, 6456],
+          color: "#1A56DB",
+        },
+      ],
+      xaxis: {
+        categories: [
+          "01 February",
+          "02 February",
+          "03 February",
+          "04 February",
+          "05 February",
+          "06 February",
+          "07 February",
+        ],
+        labels: {
+          show: false,
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      yaxis: {
+        show: false,
+      }
+    }));
+    
+    console.log(optionsValues);
+    
   return (
     <div>
         
@@ -128,9 +206,12 @@ function Sidebar() {
    </div>
 </aside>
 
-<div className="p-4 mt-10 sm:ml-64">
-   <Grap1/>
+<div className="p-4 mt-16 flex flex-col sm:flex-row md:justify-around gap-4 sm:ml-64">
+  {optionsValues.map((item, index) => (
+    <Grap1 key={index} optionsObj={item} />
+  ))}
 </div>
+
 
     </div>
   )
