@@ -1,5 +1,7 @@
 import Alertbox from "./Alertbox"
 import Grap1 from "./Grap1"
+import Pie from "./Pie1";
+import Pie2 from "./Pie2";
 
 function Sidebar() {
    const optionsValues = Array(3).fill().map(() => (
@@ -206,10 +208,14 @@ function Sidebar() {
    </div>
 </aside>
 
-<div className="p-4 mt-16 flex flex-col sm:flex-row md:justify-around gap-4 sm:ml-64">
+<div className="p-4 mt-16 flex flex-col md:justify-around gap-4 sm:ml-64">
+  <div className="flex md:flex-row flex-col gap-4">
   {optionsValues.map((item, index) => (
     <Grap1 key={index} optionsObj={item} />
   ))}
+  </div>
+  <Pie/>
+  <Pie2/>
 </div>
 
 
