@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef } from 'react'
+import { useMemo, useEffect, useRef } from 'react'
 import ApexCharts from 'apexcharts'
 
 function Pie() {
@@ -63,7 +63,7 @@ function Pie() {
         return () => {
             chart.destroy()
         }
-    }, [])
+    }, [pieOptions])
 
     return (
         <div>
@@ -72,7 +72,7 @@ function Pie() {
                     <div className="flex items-center">
                         <div className="flex justify-center items-center">
                             <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">
-                                Your team's progress
+                                Your teams progress
                             </h5>
                             <svg
                                 data-popover-target="chart-info"

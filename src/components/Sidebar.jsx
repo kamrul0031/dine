@@ -214,8 +214,10 @@ function Sidebar() {
     <Grap1 key={index} optionsObj={item} />
   ))}
   </div>
-  <Pie/>
-  <Pie2/>
+  <div className="flex md:flex-row  flex-col gap-4">
+      <Pie/>
+      <Pie2/>
+  </div>
 </div>
 
 
